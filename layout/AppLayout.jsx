@@ -1,4 +1,5 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 
 export default function AppLayout() {
 
@@ -6,14 +7,9 @@ export default function AppLayout() {
 
         <>
 
-            <header>
-                <nav>
-                    <NavLink to="/">Link Films</NavLink>
-                </nav>
+            <Header />
 
-            </header>
-
-            <main>
+            <main className="bg-light">
                 <Outlet />
             </main>
 
