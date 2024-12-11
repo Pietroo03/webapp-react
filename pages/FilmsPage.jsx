@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 export default function FilmsPage() {
+
+    const { id } = useParams()
 
     return (
         <>
@@ -14,7 +16,7 @@ export default function FilmsPage() {
                                 <div className="card-body">
                                     <h5 className="card-title">Film title</h5>
                                     <p className="card-text" style={{ overflowX: 'hidden' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore amet voluptatem consequuntur, quisquam fugit provident modi hic reprehenderit pariatur rerum.</p>
-                                    <Link href="#" className="btn btn-primary">Check reviews!</Link>
+                                    <Link to={`/films/${id}`} className="btn btn-primary">Check reviews!</Link>
                                 </div>
                             </div>
                         </div>
@@ -25,7 +27,7 @@ export default function FilmsPage() {
                                 <div className="card-body">
                                     <h5 className="card-title">Film title</h5>
                                     <p className="card-text" style={{ overflowX: 'hidden' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore amet voluptatem consequuntur, quisquam fugit provident modi hic reprehenderit pariatur rerum.</p>
-                                    <Link href="#" className="btn btn-primary">Check reviews!</Link>
+                                    <Link to={`/films/${id}`} className="btn btn-primary">Check reviews!</Link>
                                 </div>
                             </div>
                         </div>
