@@ -29,19 +29,13 @@ export default function InfoFilm() {
     return (
         <div className="info card">
 
-            {moviesData.movies ?
-                moviesData.movies.map((movie, index) => (
-                    <div className="card-body">
-                        <h2>Title</h2>
-                        <div><strong>Director:</strong> {movie.director}</div>
-                        <div><strong>Genre:</strong> {movie.genre}</div>
-                        <div><strong>Release year:</strong> {movie.release_year}</div>
-                        <p><strong>Abstract:</strong> {movie.abstract}</p>
-                    </div>
-
-                )) :
-                <p>nessuna info</p>
-            }
+            <div className="card-body">
+                <h2>Title</h2>
+                <div><strong>Director:</strong> {moviesData.director}</div>
+                <div><strong>Genre:</strong> {moviesData.genre}</div>
+                <div><strong>Release year:</strong> {moviesData.release_year}</div>
+                <p><strong>Abstract:</strong> {moviesData.abstract}</p>
+            </div>
 
         </div>
     )
