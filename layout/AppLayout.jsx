@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function AppLayout() {
 
@@ -13,9 +14,9 @@ export default function AppLayout() {
                 <Outlet />
             </main>
 
-            <footer>
-                <p>diritti copyright</p>
-            </footer>
+            <Footer />
+
         </>
+
     )
 }
