@@ -17,6 +17,14 @@ export default function SingleFilm() {
                         <p><strong>Abstract:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officiis, cupiditate quo expedita saepe obcaecati, modi et rem numquam repellendus enim officia earum quae repellat eveniet. Assumenda laboriosam accusamus a!</p>
                     </div>
                 </div>
+                <div className="reviews card mt-3">
+                    <div className="card-body">
+                        <span><strong>Nome</strong></span>
+                        <span> Voto</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cupiditate optio voluptatem repudiandae aspernatur neque blanditiis eum! Quos, incidunt error?</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
