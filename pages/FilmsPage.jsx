@@ -7,7 +7,7 @@ const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 
 export default function FilmsPage() {
 
-    const [postData, setPostData] = useState({})
+    const [moviesData, setMoviesData] = useState({})
     const { id } = useParams()
 
     function fetchData(url = API_SERVER + API_ENDPOINT) {
@@ -15,7 +15,7 @@ export default function FilmsPage() {
             .then(resp => resp.json())
             .then(data => {
                 console.log(data);
-                setPostData(data)
+                setMoviesData(data)
             })
             .catch(error => {
                 console.error('errore nel recupero dati', error);
@@ -29,7 +29,7 @@ export default function FilmsPage() {
 
     return (
         <>
-            <FilmCard Link={Link} id={id} postsData={postData} />
+            <FilmCard Link={Link} id={id} moviesData={moviesData} />
         </>
     )
 }
