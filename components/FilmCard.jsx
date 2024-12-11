@@ -5,17 +5,19 @@ export default function FilmCard({ Link, moviesData }) {
         <section className="py-5">
 
             <div className="container-lg">
-                <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
                     {moviesData.movies ?
                         moviesData.movies.map((movie, index) => (
                             <div className="col" key={index}>
-                                <div className="card">
+                                <div className="card h-100">
                                     <img src="" className="card-img-top" alt="immagine copertina" />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{movie.title}</h5>
-                                        <p className="card-text" style={{ overflowX: 'hidden' }}>{movie.abstract}</p>
-                                        <Link to={`/films/${movie.id}`} className="btn btn-primary">Check reviews!</Link>
+                                    <div className="card-body d-flex flex-column">
+                                        <h2 className="card-title">{movie.title}</h2>
+                                        <p className="card-text fs-5" style={{ overflowX: 'hidden' }}>{movie.abstract}</p>
+                                        <div className="mt-auto text-center">
+                                            <Link to={`/films/${movie.id}`} className="btn btn-primary">Check info!</Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
