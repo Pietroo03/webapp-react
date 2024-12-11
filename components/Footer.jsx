@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="container-lg">
                 <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 justify-content-between">
                     <div className="col">
-                        <h3>Social</h3>
+                        <h2>Social</h2>
 
                         <div className="social d-flex flex-column">
                             <i className="m-2 bi bi-facebook"> Facebook</i>
@@ -19,7 +19,7 @@ export default function Footer() {
                     </div>
 
                     <div className="col">
-                        <h3>Menù</h3>
+                        <h2>Menù</h2>
 
                         <ul className="list-unstyled">
                             <li className="m-2"><a href="#" className="text-white">About</a></li>
