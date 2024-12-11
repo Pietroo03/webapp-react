@@ -32,7 +32,7 @@ export default function ReviewsFilm() {
 
             {moviesData.reviews ?
                 moviesData.reviews.map((review, index) => (
-                    <div className="card-body">
+                    <div className="card-body" key={index}>
                         <span><strong>{review.name}</strong></span>
                         <span> {review.vote}/5</span>
                         <p>{review.text}</p>
