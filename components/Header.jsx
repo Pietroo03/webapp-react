@@ -6,7 +6,7 @@ export default function () {
         <header className="bg-dark p-4 shadow">
             <nav>
                 <NavLink to="/" className='text-decoration-none text-white'>
-                    <h2>Films</h2>
+                    <h1>Films</h1>
                 </NavLink>
             </nav>
         </header>

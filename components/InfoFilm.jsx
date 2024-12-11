@@ -30,7 +30,7 @@ export default function InfoFilm() {
         <div className="info card">
 
             <div className="card-body">
-                <h2>{moviesData.title}</h2>
+                <h2 className="mb-3">{moviesData.title}</h2>
                 <div className="fs-4"><strong>Director:</strong> {moviesData.director}</div>
                 <div className="fs-4"><strong>Genre:</strong> {moviesData.genre}</div>
                 <div className="fs-4"><strong>Release year:</strong> {moviesData.release_year}</div>

@@ -29,7 +29,7 @@ export default function ReviewsFilm() {
     return (
 
         <div className="reviews card mt-3">
-            <h3 className="m-3">Reviews</h3>
+            <h2 className="m-3">Reviews</h2>
             {moviesData.reviews ?
                 moviesData.reviews.map((review, index) => (
                     <div className="card-body" key={index}>
