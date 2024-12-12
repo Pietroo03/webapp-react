@@ -11,10 +11,10 @@ function App() {
 
       <BrowserRouter>
         <Routes>
+
           <Route element={<AppLayout />}>
             <Route index element={<FilmsPage />} />
             <Route path="films/:id" element={<SingleFilm />} />
-
           </Route>
 
         </Routes>
