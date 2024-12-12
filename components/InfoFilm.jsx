@@ -6,7 +6,7 @@ const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 
 export default function InfoFilm() {
 
-    const [moviesData, setMoviesData] = useState({})
+    const [movieData, setMovieData] = useState({})
     const { id } = useParams()
 
     function fetchData(url = `${API_SERVER}${API_ENDPOINT}/${id}`) {
@@ -14,7 +14,7 @@ export default function InfoFilm() {
             .then(resp => resp.json())
             .then(data => {
                 console.log(data);
-                setMoviesData(data)
+                setMovieData(data)
             })
             .catch(error => {
                 console.error('errore nel recupero dati', error);
@@ -30,11 +30,11 @@ export default function InfoFilm() {
         <div className="info card">
 
             <div className="card-body">
-                <h2 className="mb-3">{moviesData.title}</h2>
-                <div className="fs-4"><strong>Director:</strong> {moviesData.director}</div>
-                <div className="fs-4"><strong>Genre:</strong> {moviesData.genre}</div>
-                <div className="fs-4"><strong>Release year:</strong> {moviesData.release_year}</div>
-                <p className="fs-4"><strong>Abstract:</strong> {moviesData.abstract}</p>
+                <h2 className="mb-3">{movieData.title}</h2>
+                <div className="fs-4"><strong>Director:</strong> {movieData.director}</div>
+                <div className="fs-4"><strong>Genre:</strong> {movieData.genre}</div>
+                <div className="fs-4"><strong>Release year:</strong> {movieData.release_year}</div>
+                <p className="fs-4"><strong>Abstract:</strong> {movieData.abstract}</p>
             </div>
 
         </div>
