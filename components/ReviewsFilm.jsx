@@ -26,6 +26,18 @@ export default function ReviewsFilm() {
         fetchData()
     }, [])
 
+    const renderstars = (rating) => {
+        let stars = []
+        for (let i = 0; i < 5; i++) {
+            if (i < rating) {
+                stars.push(<i key={i} className='bi bi-star-fill' style={{ color: 'gold' }}></i>)
+            } else {
+                stars.push(<i key={i} className='bi bi-star'></i>)
+            }
+        }
+        return stars
+    }
+
     return (
 
         <div className="reviews card mt-3">
@@ -33,9 +45,10 @@ export default function ReviewsFilm() {
             {movieData.reviews ?
                 movieData.reviews.map((review, index) => (
                     <div className="card-body" key={index}>
-
-                        <span className="fs-4"><strong>{review.name}</strong></span>
-                        <span className="fs-5"> {review.vote}/5</span>
+                        <div className="d-flex align-items-center">
+                            <span className="fs-4"><strong>{review.name}</strong></span>
+                            <span className="fs-5 ms-2">{renderstars(review.vote)}</span>
+                        </div>
                         <p className="fs-5">{review.text}</p>
                     </div>
 

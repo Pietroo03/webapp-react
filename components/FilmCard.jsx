@@ -14,7 +14,7 @@ export default function FilmCard({ Link, moviesData }) {
                                     <img src="" className="card-img-top" alt="immagine copertina" />
                                     <div className="card-body d-flex flex-column">
                                         <h2 className="card-title">{movie.title}</h2>
-                                        <p className="card-text fs-5" style={{ overflowX: 'hidden' }}>{movie.abstract}</p>
+                                        <p className="card-text h-100 fs-5" style={{ overflowX: 'hidden' }}>{movie.abstract}</p>
                                         <div className="mt-auto text-center">
                                             <Link to={`/films/${movie.id}`} className="btn btn-primary">Check info!</Link>
                                         </div>
