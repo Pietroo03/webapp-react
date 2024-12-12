@@ -10,7 +10,7 @@ export default function AppLayout() {
 
             <Header />
 
-            <main className="bg-light">
+            <main className="bg-light vh-100">
                 <Outlet />
             </main>
 
