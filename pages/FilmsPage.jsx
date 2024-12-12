@@ -8,7 +8,6 @@ const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 export default function FilmsPage() {
 
     const [moviesData, setMoviesData] = useState({})
-    const { id } = useParams()
 
     function fetchData(url = API_SERVER + API_ENDPOINT) {
         fetch(url)
@@ -29,7 +28,7 @@ export default function FilmsPage() {
 
     return (
         <>
-            <FilmCard Link={Link} id={id} moviesData={moviesData} />
+            <FilmCard Link={Link} moviesData={moviesData} />
         </>
     )
 }
