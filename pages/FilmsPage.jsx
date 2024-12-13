@@ -31,18 +31,10 @@ export default function FilmsPage() {
         fetchData()
     }, [])
 
-    console.log("moviesData in FilmsPage:", moviesData);
-
-
     return (
         <>
-            {isLoading && (
-                <div className="loading-overlay position-fixed top-0 left-0">
-                    <div className="loading-message text-black">Caricamento ...</div>
-                </div>
-            )}
 
-            {moviesData.length > 0 && !isLoading ? (
+            {moviesData.movies ? (
                 <FilmCard Link={Link} moviesData={moviesData} />
             ) : (
                 !isLoading && (

@@ -7,7 +7,7 @@ export default function FilmCard({ Link, moviesData }) {
             <div className="container-lg">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-                    {moviesData.length > 0 ? (
+                    {moviesData.movies ? (
                         moviesData.movies.map((movie, index) => (
                             <div className="col" key={index}>
                                 <div className="card h-100">

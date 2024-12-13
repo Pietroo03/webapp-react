@@ -11,7 +11,7 @@ function Loadingmessage() {
 
   return (
     <div className="loading-overlay position-fixed top-0 left-0 w-100 h-100 bg-light d-flex justify-content-center align-items-center">
-      <div className="loading-message">Caricamento in corso ...</div>
+      <div className="loading-message fs-3">Caricamento in corso ...</div>
     </div>
   )
 }
