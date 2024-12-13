@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const API_SERVER = import.meta.env.VITE_API_SERVER
 const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
@@ -14,7 +14,7 @@ export default function ReviewForm({ movie_id }) {
     }
 
     function HandleFormSubmit(e) {
-        e.preventDefault()
+        //e.preventDefault()
 
         const formData = {
             name,
@@ -43,6 +43,10 @@ export default function ReviewForm({ movie_id }) {
         setVote(0)
 
     }
+
+    useEffect(() => {
+        HandleFormSubmit()
+    }, [])
 
     return (
 
