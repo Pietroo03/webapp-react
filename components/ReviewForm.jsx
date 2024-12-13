@@ -9,6 +9,10 @@ export default function ReviewForm({ movie_id }) {
     const [review, setReview] = useState('')
     const [vote, setVote] = useState(0)
 
+    function HandleFormToggle() {
+        document.getElementById('form-card').classList.toggle('d-none')
+    }
+
     function HandleFormSubmit(e) {
         e.preventDefault()
 
@@ -42,8 +46,13 @@ export default function ReviewForm({ movie_id }) {
 
     return (
 
-        <div className="container">
-            <div className="card">
+        <>
+
+            <div className="text-center">
+                <button onClick={HandleFormToggle} className="btn btn-dark">Lascia una recensione!</button>
+            </div>
+
+            <div id="form-card" className="card">
                 <div className="card-body">
                     <form onSubmit={HandleFormSubmit}>
 
@@ -62,6 +71,6 @@ export default function ReviewForm({ movie_id }) {
                     </form>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
