@@ -42,7 +42,7 @@ export default function ReviewForm({ movie_id }) {
         <div className="container">
             <div className="card">
                 <div className="card-body">
-                    <form onClick={HandleFormSubmit}>
+                    <form onSubmit={HandleFormSubmit}>
 
                         <label htmlFor="name">Username</label>
                         <input name="name" id="name" type="text" className="form-control" placeholder="Inserisci l'username" value={name} onChange={(e) => setName(e.target.value)} />
