@@ -13,7 +13,7 @@ export default function InfoFilm() {
         fetch(url)
             .then(resp => resp.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 setMovieData(data)
             })
             .catch(error => {
