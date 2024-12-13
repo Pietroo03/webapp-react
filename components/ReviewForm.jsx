@@ -49,24 +49,24 @@ export default function ReviewForm({ movie_id }) {
         <>
 
             <div className="text-center">
-                <button onClick={HandleFormToggle} className="btn btn-dark">Lascia una recensione!</button>
+                <button onClick={HandleFormToggle} className="btn btn-dark mb-3 fs-5">Lascia una recensione!</button>
             </div>
 
-            <div id="form-card" className="card">
+            <div id="form-card" className="card mb-3">
                 <div className="card-body">
                     <form onSubmit={HandleFormSubmit}>
 
-                        <label htmlFor="name">Username</label>
-                        <input name="name" id="name" type="text" className="form-control" placeholder="Inserisci l'username" value={name} onChange={(e) => setName(e.target.value)} />
+                        <label htmlFor="name" className="pb-2 fs-4"><strong>Username</strong></label>
+                        <input name="name" id="name" type="text" className="form-control fs-5" placeholder="Inserisci l'username ..." value={name} onChange={(e) => setName(e.target.value)} />
 
-                        <div className="rating my-3 text-warning">
+                        <div className="rating my-3 text-warning fs-4">
                             {[1, 2, 3, 4, 5].map(n => <i key={n} className={`bi bi-star${n <= vote ? '-fill' : ''} `} onClick={() => setVote(n)}></i>)}
                         </div>
 
-                        <label htmlFor="review">Review</label>
-                        <input name="review" id="text" type="text" className="form-control" placeholder="Inserisci la tua recensione" value={review} onChange={(e) => setReview(e.target.value)} />
+                        <label htmlFor="review" className="pb-2 fs-4"> <strong>Review</strong></label>
+                        <textarea name="review" id="text" type="text" className="form-control fs-5" placeholder="Inserisci la tua recensione ..." value={review} onChange={(e) => setReview(e.target.value)} />
 
-                        <button type="submit" className="btn btn-dark">Invia recensione</button>
+                        <button type="submit" className="btn btn-dark mt-3 fs-5">Invia recensione</button>
 
                     </form>
                 </div>
