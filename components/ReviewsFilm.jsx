@@ -13,7 +13,7 @@ export default function ReviewsFilm() {
         fetch(url)
             .then(resp => resp.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 setMovieData(data)
             })
             .catch(error => {
