@@ -11,7 +11,6 @@ export default function ReviewForm({ movie_id }) {
 
     function HandleFormSubmit(e) {
         e.preventDefault()
-        console.log('form works');
 
         const formData = {
             name,
@@ -34,6 +33,10 @@ export default function ReviewForm({ movie_id }) {
             })
             .catch(err => console.log(err)
             )
+
+        setName('')
+        setReview('')
+        setVote(0)
 
     }
 
