@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import AppLayout from "../layout/AppLayout"
-import FilmsPage from "../pages/FilmsPage"
-import SingleFilm from "../pages/SingleFilm"
-import { LoadingProvider, useLoading } from "../context/LoadingContext"
+import AppLayout from "./layout/AppLayout"
+import FilmsPage from "./pages/FilmsPage"
+import SingleFilm from "./pages/SingleFilm"
+import { LoadingProvider, useLoading } from "./context/LoadingContext"
 
 function Loadingmessage() {
   const { isLoading } = useLoading()
