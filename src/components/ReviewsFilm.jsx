@@ -1,30 +1,5 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
 
-const API_SERVER = import.meta.env.VITE_API_SERVER
-const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
-
-export default function ReviewsFilm() {
-
-    const [movieData, setMovieData] = useState({})
-    const { id } = useParams()
-
-    function fetchData(url = `${API_SERVER}${API_ENDPOINT}/${id}`) {
-        fetch(url)
-            .then(resp => resp.json())
-            .then(data => {
-                //console.log(data);
-                setMovieData(data)
-            })
-            .catch(error => {
-                console.error('errore nel recupero dati', error);
-
-            })
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
+export default function ReviewsFilm({ reviews }) {
 
     const renderstars = (rating) => {
         let stars = []
@@ -42,8 +17,8 @@ export default function ReviewsFilm() {
 
         <div className="reviews card mt-3">
             <h2 className="m-3">Reviews</h2>
-            {movieData.reviews ?
-                movieData.reviews.map((review, index) => (
+            {reviews ?
+                reviews.map((review, index) => (
                     <div className="card-body" key={index}>
                         <div className="d-flex align-items-center">
                             <span className="fs-4"><strong>{review.name}</strong></span>
@@ -53,7 +28,7 @@ export default function ReviewsFilm() {
                     </div>
 
                 )) :
-                <p>nessuna recenzione</p>
+                <p>nessuna recensione</p>
             }
         </div>
     )

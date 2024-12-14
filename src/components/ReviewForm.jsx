@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 const API_SERVER = import.meta.env.VITE_API_SERVER
 const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 
-export default function ReviewForm({ movie_id }) {
+export default function ReviewForm({ movie_id, addReview }) {
 
     const [name, setName] = useState('')
     const [review, setReview] = useState('')
@@ -14,7 +14,7 @@ export default function ReviewForm({ movie_id }) {
     }
 
     function HandleFormSubmit(e) {
-        //e.preventDefault()
+        e.preventDefault()
 
         const formData = {
             name,
@@ -33,7 +33,11 @@ export default function ReviewForm({ movie_id }) {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if (data) {
+                    addReview(data)
+                } else {
+                    console.log('no review data returned');
+                }
             })
             .catch(err => console.log(err)
             )
@@ -45,7 +49,7 @@ export default function ReviewForm({ movie_id }) {
     }
 
     useEffect(() => {
-        HandleFormSubmit()
+
     }, [])
 
     return (
