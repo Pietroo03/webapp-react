@@ -42,8 +42,6 @@ export default function SingleFilm() {
     const addReview = (newReview) => {
         console.log('nuova review aggiunta', newReview);
 
-        setReviews(prevReviews => [...prevReviews, newReview])
-
         fetchData()
     }
 
@@ -60,7 +58,7 @@ export default function SingleFilm() {
                     <section className="py-5">
                         <div className="container-lg">
                             <ReviewForm movie_id={id} addReview={addReview} />
-                            <InfoFilm movieData={movieData} />
+                            <InfoFilm movieData={movieData} setMovieData={setMovieData} />
                             <ReviewsFilm reviews={reviews} />
                         </div>
                     </section>

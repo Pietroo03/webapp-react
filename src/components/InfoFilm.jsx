@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 const API_SERVER = import.meta.env.VITE_API_SERVER
 const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 
-export default function InfoFilm({ movieData }) {
+export default function InfoFilm({ movieData, setMovieData }) {
 
     const { id } = useParams()
 
