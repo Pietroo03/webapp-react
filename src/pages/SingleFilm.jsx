@@ -35,13 +35,16 @@ export default function SingleFilm() {
 
     useEffect(() => {
         fetchData()
-    }, [])
+    }, [id])
+
 
 
     const addReview = (newReview) => {
         console.log('nuova review aggiunta', newReview);
 
         setReviews(prevReviews => [...prevReviews, newReview])
+
+        fetchData()
     }
 
     return (
