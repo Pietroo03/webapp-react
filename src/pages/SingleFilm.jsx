@@ -30,8 +30,8 @@ export default function SingleFilm() {
 
         <section className="py-5">
             <div className="container-lg">
-                <ReviewForm movie_id={id} addReview={addReview} />
                 <InfoFilm />
+                <ReviewForm movie_id={id} addReview={addReview} />
                 <ReviewsFilm reviews={reviews} />
             </div>
         </section>

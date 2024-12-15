@@ -57,10 +57,10 @@ export default function ReviewForm({ movie_id, addReview }) {
         <>
 
             <div className="text-center">
-                <button onClick={HandleFormToggle} className="btn btn-dark mb-3 fs-5">Lascia una recensione!</button>
+                <button onClick={HandleFormToggle} className="btn btn-dark my-3 fs-5">Lascia una recensione!</button>
             </div>
 
-            <div id="form-card" className="card mb-3">
+            <div id="form-card" className="card mb-3 d-none">
                 <div className="card-body">
                     <form onSubmit={HandleFormSubmit}>
 

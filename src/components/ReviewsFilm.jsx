@@ -15,16 +15,17 @@ export default function ReviewsFilm({ reviews }) {
 
     return (
 
-        <div className="reviews card mt-3">
+        <div className="reviews card">
             <h2 className="m-3">Reviews</h2>
             {reviews ?
                 reviews.map((review, index) => (
                     <div className="card-body" key={index}>
                         <div className="d-flex align-items-center">
-                            <span className="fs-4"><strong>{review.name}</strong></span>
-                            <span className="fs-5 ms-2">{renderstars(review.vote)}</span>
+                            <div className="fs-4"><strong>{review.name}</strong></div>
+                            <div className="fs-5 ps-5">{renderstars(review.vote)}</div>
                         </div>
-                        <p className="fs-5">{review.text}</p>
+                        <p className="fs-4 py-2">{review.text}</p>
+                        <div className="fs-6">Scritta il {new Date(review.created_at).toLocaleDateString('it-IT')}</div>
                     </div>
 
                 )) :
