@@ -15,7 +15,7 @@ export default function ReviewsFilm({ reviews }) {
 
     return (
 
-        <div className="reviews card">
+        <div className="reviews card py-0">
             <h2 className="m-3">Reviews</h2>
             {reviews ?
                 reviews.map((review, index) => (
@@ -26,6 +26,8 @@ export default function ReviewsFilm({ reviews }) {
                         </div>
                         <p className="fs-4 py-2">{review.text}</p>
                         <div className="fs-6">Scritta il {new Date(review.created_at).toLocaleDateString('it-IT')}</div>
+                        <br />
+                        <hr />
                     </div>
 
                 )) :

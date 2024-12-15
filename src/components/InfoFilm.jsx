@@ -4,9 +4,8 @@ import { useParams } from "react-router-dom"
 const API_SERVER = import.meta.env.VITE_API_SERVER
 const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 
-export default function InfoFilm() {
+export default function InfoFilm({ movieData }) {
 
-    const [movieData, setMovieData] = useState({})
     const { id } = useParams()
 
     function fetchData(url = `${API_SERVER}${API_ENDPOINT}/${id}`) {
@@ -27,7 +26,7 @@ export default function InfoFilm() {
     }, [])
 
     return (
-        <div className="info card">
+        <div className="info card mb-4">
 
             <div className="card-body">
                 <h2 className="mb-3">{movieData.title}</h2>
