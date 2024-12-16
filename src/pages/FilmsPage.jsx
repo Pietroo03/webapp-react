@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import { useEffect, useState } from "react"
-import { useLoading } from "../context/LoadingContext"
+import { useContext, useEffect, useState } from "react"
+import LoadingContext from "../context/LoadingContext"
 import FilmCard from "../components/FilmCard"
 
 const API_SERVER = import.meta.env.VITE_API_SERVER
@@ -9,10 +9,10 @@ const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 export default function FilmsPage() {
 
     const [moviesData, setMoviesData] = useState([])
-    const { startLoading, stopLoading, isLoading } = useLoading()
+    const { loading, setLoading } = useContext(LoadingContext)
 
     function fetchData(url = API_SERVER + API_ENDPOINT) {
-        startLoading()
+        setLoading(true)
         fetch(url)
             .then(resp => resp.json())
             .then(data => {
@@ -23,7 +23,7 @@ export default function FilmsPage() {
                 console.error('errore nel recupero dati', error);
             })
             .finally(() => {
-                stopLoading()
+                setLoading(false)
             })
     }
 
@@ -34,15 +34,20 @@ export default function FilmsPage() {
     return (
         <>
 
-            {moviesData.movies ? (
-                <FilmCard Link={Link} moviesData={moviesData} />
+            {loading ? (
+                <div className="text-center">
+                    <p>Caricamento in corso...</p>
+                </div>
             ) : (
-                !isLoading && (
+                moviesData ? (
+                    <FilmCard Link={Link} moviesData={moviesData} />
+                ) : (
                     <div className="text-center">
                         <p>Nessun film trovato.</p>
                     </div>
                 )
             )}
+
 
         </>
     )

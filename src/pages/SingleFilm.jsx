@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react"
-import { useLoading } from "../context/LoadingContext"
+import { useState, useEffect, useContext } from "react"
+import LoadingContext from "../context/LoadingContext"
 import InfoFilm from "../components/InfoFilm"
 import ReviewsFilm from "../components/ReviewsFilm"
 import ReviewForm from "../components/ReviewForm"
@@ -14,10 +14,10 @@ export default function SingleFilm() {
     const { id } = useParams()
     const [reviews, setReviews] = useState([])
     const [movieData, setMovieData] = useState({})
-    const { startLoading, stopLoading, isLoading } = useLoading()
+    const { loading, setLoading } = useContext(LoadingContext)
 
     function fetchData(url = `${API_SERVER}${API_ENDPOINT}/${id}`) {
-        startLoading()
+        setLoading(true)
         fetch(url)
             .then(resp => resp.json())
             .then(data => {
@@ -29,7 +29,7 @@ export default function SingleFilm() {
                 console.error('errore nel recupero dati', error);
             })
             .finally(() => {
-                stopLoading()
+                setLoading(false)
             })
     }
 
@@ -49,7 +49,7 @@ export default function SingleFilm() {
 
         <>
 
-            {isLoading ? (
+            {loading ? (
                 <div className="text-center">
                     <p>Caricamento in corso...</p>
                 </div>
