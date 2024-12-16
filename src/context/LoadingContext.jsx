@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+/* import { createContext, useContext, useState } from "react";
 
 const LoadingContext = createContext()
 
@@ -16,4 +16,10 @@ export const LoadingProvider = ({ children }) => {
 
 }
 
-export const useLoading = () => useContext(LoadingContext)
+export const useLoading = () => useContext(LoadingContext) */
+
+import { createContext } from "react";
+
+const LoadingContext = createContext()
+
+export default LoadingContext
