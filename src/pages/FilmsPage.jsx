@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import LoadingContext from "../context/LoadingContext"
 import FilmCard from "../components/FilmCard"
+import Loader from "../components/Loader"
 
 const API_SERVER = import.meta.env.VITE_API_SERVER
 const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT
@@ -35,9 +36,7 @@ export default function FilmsPage() {
         <>
 
             {loading ? (
-                <div className="text-center">
-                    <p>Caricamento in corso...</p>
-                </div>
+                <Loader />
             ) : (
                 moviesData ? (
                     <FilmCard Link={Link} moviesData={moviesData} />
