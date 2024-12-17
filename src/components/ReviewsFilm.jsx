@@ -20,12 +20,13 @@ export default function ReviewsFilm({ reviews }) {
             {reviews ?
                 reviews.map((review, index) => (
                     <div className="card-body" key={index}>
+                        <hr />
                         <div className="d-flex align-items-center">
                             <div className="fs-4"><strong>{review.name}</strong></div>
                             <div className="fs-5 ps-5">{renderstars(review.vote)}</div>
                         </div>
                         <p className="fs-4 py-2">{review.text}</p>
-                        <div className="fs-6">Scritta il {new Date(review.created_at).toLocaleDateString('it-IT')}</div>
+                        <div className="fs-6">Pubblicata il {new Date(review.created_at).toLocaleDateString('it-IT')}</div>
                         <br />
                         <hr />
                     </div>
